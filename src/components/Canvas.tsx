@@ -8,11 +8,11 @@ const Canvas: React.FC<{ onCanvasReady: (canvas: fabric.Canvas) => void }> = ({ 
     if (!canvasRef.current) return;
 
     const canvas = new fabric.Canvas(canvasRef.current, {
-      backgroundColor: "white", // ✅ 初期状態から白にする
+      backgroundColor: "white",
       selection: true
     });
 
-    canvas.renderAll(); // ✅ すぐに背景を反映
+    canvas.renderAll();
     onCanvasReady(canvas);
 
     return () => {
