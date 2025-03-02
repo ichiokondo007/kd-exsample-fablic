@@ -19,8 +19,7 @@ const Canvas: React.FC<{ onCanvasReady: (canvas: fabric.Canvas) => void }> = ({ 
       canvas.dispose();
     };
   }, []);
-
-  return <canvas ref={canvasRef} width={800} height={500} style={{ border: "1px solid gray" }} />;
+  return <canvas ref={canvasRef} width={800} height={500} className="canvas-border" />;
 };
 
 export default Canvas;
