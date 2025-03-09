@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import * as fabric from "fabric";
 
+
+
 const Canvas: React.FC<{ onCanvasReady: (canvas: fabric.Canvas) => void }> = ({ onCanvasReady }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
