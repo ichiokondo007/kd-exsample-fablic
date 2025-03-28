@@ -1,16 +1,26 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import App from "./App";
+import Layout from "./app/Layout";
+import Top from "./app/top/TopPage";
+import Login from "./app/Login";
+import CanvasListPage from "./app/automerge/CanvasListPage";
+import OthersPage from "./app/others/OthersPage";
 
-const AppRouter: React.FC = () => {
+function RouterConfig() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} /> {/* 初期画面をログイン画面に設定 */}
-        <Route path="/canvas" element={<App />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/top" element={<Layout />}>
+          <Route index element={<Top />} />
+        </Route>
+        <Route path="/CanvasListPage" element={<Layout />}>
+          <Route index element={<CanvasListPage />} />
+        </Route>
+        <Route path="/others" element={<Layout />}>
+          <Route index element={<OthersPage />} />
+        </Route>
       </Routes>
     </Router>
   );
-};
-export default AppRouter;
+}
+export default RouterConfig;

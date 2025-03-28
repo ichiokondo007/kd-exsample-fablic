@@ -12,3 +12,99 @@ button {
 button:hover {
     background: #666;
 }
+
+.header {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #21293e;
+    display: flex;
+    justify-content: center; /* 子要素を中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    z-index: 1000;
+}
+
+body {
+    margin-top: 70px; /* Headerの高さ分の余白を追加 */
+}
+
+.header__inner {
+    max-width: 1152px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* 子要素を左右に配置 */
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header__logo {
+    height: 65px;
+}
+
+.header__navgroup {
+    display: flex;
+    align-items: center;
+}
+
+.header__navgroup>*+* {
+    margin-left: 20px;
+}
+
+.header__navitem {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.login-form {
+    animation: slideDown 1.0s ease-out;
+    /* アニメーションを適用 */
+}
+
+.breadcrumb {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .top-container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.card-small {
+    max-width: 350px; /* 必要な横幅を指定 */
+}
+
+.title-container {
+    width: 100%;
+    height: 70px; /* Headerと同じ高さ */
+    background: #f5f5f5; /* 背景色を設定 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    z-index: 0; /* Headerより下に表示 */
+    margin-top: 70px; /* Headerの高さ分の余白を追加 */
+}

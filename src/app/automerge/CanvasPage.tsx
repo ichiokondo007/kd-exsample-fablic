@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from "react";
-import Canvas from "./components/Canvas";
-import Toolbar from "./components/Toolbar";
+import Canvas from "./Canvas";
+import Toolbar from "./Toolbar";
 import * as fabric from "fabric";
 
-const App: React.FC = () => {
+const CanvasPage: React.FC = () => {
   const [canvas, setCanvas] = useState<fabric.Canvas | null>(null);
   // useCallbackで新しい関数が作られるのを防ぐため
   const handleCanvasReady = useCallback((newCanvas: fabric.Canvas) => {
@@ -21,4 +21,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default CanvasPage;

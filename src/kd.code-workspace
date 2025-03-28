@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../kdlab/sample"
+		},
+		{
+			"path": "../../fabric"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "sample"
+	}
+}
