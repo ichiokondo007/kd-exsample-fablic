@@ -6,7 +6,7 @@ const Title: React.FC = () => {
 
   return (
     <div className="title-container">
-      <span>{title}</span>
+      <span className= "text-xl">{title}</span>
     </div>
   );
 };
