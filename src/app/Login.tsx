@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import { TitleContext } from "./Layout";
+import { TOP,TOPPATH,loginsessionName,LoginInfo } from "../lib/commonType";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const { setTitle } = useContext(TitleContext);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [backgroundColor, setBackgroundColor] = useState<string>("");
+  const logininfo:LoginInfo = {username: "", backgroundColor: ""};
 
   useEffect(() => {
-    // 初回ロード時にランダムな背景色を設定
+    // ランダム背景色設定
     const colors = ["#3498db", "#e74c3c", "#2ecc71", "#f39c12", "#4338ca"];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     setBackgroundColor(randomColor);
-  }, []); // 空の依存配列で初回ロード時のみ実行
+  }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     const str = email;
     const atIndex = str.indexOf("@");
-    const username = str.substring(0, atIndex);
+    logininfo.username = str.substring(0, atIndex);
+    logininfo.backgroundColor = backgroundColor;
 
-    console.log(username);
-    console.log(backgroundColor);
-    sessionStorage.setItem("kdlogininfo", JSON.stringify([username, backgroundColor]));
-    navigate("/top");
-   // window.location.href = "/top";
+    sessionStorage.setItem(loginsessionName, JSON.stringify(logininfo));
+    setTitle(TOP);
+    navigate(TOPPATH);
+    // window.location.href = "/top";
   };
 
   return (

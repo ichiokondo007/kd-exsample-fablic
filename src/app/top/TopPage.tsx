@@ -1,4 +1,11 @@
-function TopPage() {
+import React, { useContext } from "react";
+import { TitleContext } from "../../app/Layout";
+import { TOP } from "../../lib/commonType";
+
+const TopPage: React.FC = () => {
+  const { setTitle } = useContext(TitleContext);
+  setTitle(TOP);
+
   return (
     <div
       style={{

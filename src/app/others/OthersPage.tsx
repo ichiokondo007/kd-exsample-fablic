@@ -1,5 +1,10 @@
+import React, { useContext } from "react";
+import { TitleContext } from "../../app/Layout";
+import { OTHERS } from "../../lib/commonType";
 
-function Others() {
+const Others: React.FC = () => {
+  const { setTitle } = useContext(TitleContext);
+  setTitle(OTHERS);
   return (
     <div
       style={{
@@ -29,11 +34,4 @@ function Others() {
     </div>
   )
 };
-/**
- * The `Others` component serves as the default export for the `OthersPage` module.
- * This component is typically used to render content related to the "Others" section
- * of the application.
- *
- * @component
- */
 export default Others;

@@ -4,52 +4,41 @@ import { TitleContext } from "../../app/Layout";
 import "../../styles.css";
 import Dropdown from "../ui/Dropdown";
 import { InitialAvatar } from "../ui/avater";
+import { getTitleObjectByKey, MenuKey, TOP, TOPPATH, CanvasList, InputFormTest, OTHERS, loginsessionName, LoginInfo } from "../../lib/commonType";
 
 const Header: React.FC = () => {
-  const { title, setTitle } = useContext(TitleContext);
+  const { setTitle } = useContext(TitleContext);
   const navigate = useNavigate();
-
-  const handleSelect = (selectedTitle: string) => {
-    switch (selectedTitle) {
-      case "TOP":
-        setTitle("Top");
-        navigate("/top");
-        break;
-      case "CanvasList":
-        setTitle("CanvasList");
-        navigate("/CanvasListPage");
-        break;
-      case "OTHERS":
-        setTitle("Others");
-        navigate("/others");
-        break;
-      case "LOGOFF":
-        sessionStorage.clear();
-        setTitle("");
-        navigate("/");
-        break;
-      default:
-        break;
+  const handleSelect = (selectedTitle: MenuKey) => {
+    if (selectedTitle === "LOGOFF") {
+      sessionStorage.removeItem("kdlogininfo");
+      window.location.href = "/";
+      return;
     }
+    const titleObject = getTitleObjectByKey(selectedTitle);
+    const titlename = titleObject?.titlename || TOP;
+    const path = titleObject?.path || TOPPATH;
+    setTitle(titlename);
+    navigate(path);
   };
-
-  const sessionData = sessionStorage.getItem("kdlogininfo");
+  const sessionData = sessionStorage.getItem(loginsessionName);
   let username = "?";
   let backgroundColor = "#3498db";
-
   if (sessionData) {
-    const [storedUsername, storedColor] = JSON.parse(sessionData);
-    username = storedUsername || "?";
-    backgroundColor = storedColor || "#3498db";
+    const logininfo: LoginInfo = JSON.parse(sessionData);
+    username = logininfo.username || "?";
+    backgroundColor = logininfo.backgroundColor || "#3498db";
+  }else{
+    window.location.href = "/";
+    return;
   }
-
   return (
     <header className="header">
       <div className="header__inner">
         <img className="header__logo" src="./kd5_white.svg" alt="KD5 Logo" />
         <nav className="header__navgroup">
           <button
-            onClick={() => handleSelect("TOP")}
+            onClick={() => handleSelect(TOP)}
             className="header__navitem"
           >
             TOP
@@ -57,13 +46,13 @@ const Header: React.FC = () => {
           <Dropdown
             buttonLabel="AUTOMERGE"
             options={[
-              { label: "1-CANVAS-LIST", value: "CanvasList" },
-              { label: "2-Input-test", value: "inputtest" },
+              { label: "1-CANVAS-LIST", value: CanvasList },
+              { label: "2-Input-test", value: InputFormTest },
             ]}
             onSelect={(value) => handleSelect(value)}
           />
           <button
-            onClick={() => handleSelect("OTHERS")}
+            onClick={() => handleSelect(OTHERS)}
             className="header__navitem"
           >
             OTHERS
