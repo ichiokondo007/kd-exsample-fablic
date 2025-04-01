@@ -47,18 +47,7 @@ const CanvasListPage: React.FC = () => {
           loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
         />
 
-        <Card
-          cardTitle="Canvas 1"
-          lastUpdateUser="ichio"
-          lastUpdateDate="2021-09-01"
-          loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
-        />
-        <Card
-          cardTitle="Canvas 1"
-          lastUpdateUser="ichio"
-          lastUpdateDate="2021-09-01"
-          loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
-        />
+      
         <div />
       </div>
     </div>

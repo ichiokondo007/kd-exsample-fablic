@@ -15,7 +15,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ cardTitle, lastUpdateDate, lastUpdateUser, loginUserNames }) => {
     return (
         <div className="card-small rounded overflow-hidden shadow-lg"> 
-            <img className="w-full" src="./nami.jpg" alt="hoge"/>
+            <img className="card-image" src="./nami.jpg" alt="hoge"/>
                 <div className="px-6 py-4">
                     <div className="font-bold text-xl mb-2">{cardTitle}</div>
                     <p className="text-gray-700 text-base">

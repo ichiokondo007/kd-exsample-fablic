@@ -38,7 +38,6 @@ body {
     display: flex;
     justify-content: space-between; /* 子要素を左右に配置 */
     align-items: center;
-    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -95,11 +94,11 @@ body {
 }
 
 .card-small {
-    max-width: 350px; /* 必要な横幅を指定 */
+    max-width: 370px; /* 必要な横幅を指定 */
 }
 
 .card-image {
-    height: 200px;
+    height: 240px;
     object-fit: cover; /* 画像のアスペクト比を保ちながら表示 */
 }
 
@@ -119,7 +118,6 @@ body {
     max-width: 1125px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
     box-sizing: border-box;
     display: flex;
     align-items: center;

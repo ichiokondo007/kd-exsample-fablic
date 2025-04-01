@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { TitleContext } from "../../app/Layout";
 import { TOP } from "../../lib/commonType";
+import Card from "../../components/ui/Card";
 
 const TopPage: React.FC = () => {
   const { setTitle } = useContext(TitleContext);
@@ -12,28 +13,36 @@ const TopPage: React.FC = () => {
         paddingTop: "20px"
       }}
     >
-      <div
-        className="header__inner login-form Z-888"
-        style={{
-          maxWidth: "1152px",
-          width: "50%",
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          paddingLeft: "15px",
-          backgroundColor: "white",
-          borderRadius: "5px",
-        }}
-      >
-        <img
-          src="comingsoon.webp"
-          alt="commingsoon"
-          style={{
-            borderRadius: "5%",
-          }}
+      <div className="flex flex-wrap max-w-6xl mx-auto gap-5">
+
+        <Card
+          cardTitle="Canvas 1"
+          lastUpdateUser="ichio"
+          lastUpdateDate="2021-09-01"
+          loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
         />
-        <div />
+                <Card
+          cardTitle="Canvas 1"
+          lastUpdateUser="ichio"
+          lastUpdateDate="2021-09-01"
+          loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
+        />
+        <Card
+          cardTitle="Canvas 1"
+          lastUpdateUser="ichio"
+          lastUpdateDate="2021-09-01"
+          loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
+        />
+
+        <Card
+          cardTitle="Canvas 1"
+          lastUpdateUser="ichio"
+          lastUpdateDate="2021-09-01"
+          loginUserNames={[{ "name": "ichio", "color": "red" }, { "name": "taro", "color": "blue" }]}
+        />
+
       </div>
+      
     </div>
   )
 };
