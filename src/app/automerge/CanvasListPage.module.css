@@ -1,0 +1,13 @@
+.container {
+  padding-top: 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 72rem;
+  margin: 0 auto;
+  gap: 1.25rem;
+}

@@ -1,9 +1,11 @@
+@import '@fontsource/inter';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   background-color: #f2f2f3; /* 全体の背景色を設定 */
 }
 @keyframes fadeIn {
@@ -35,7 +37,7 @@ body {
 
 .skewedAnime {
   position: absolute;
-  top: 0; /* 必要に応じて調整 */
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
@@ -44,18 +46,18 @@ body {
   background: url('/tokyo.jpg') no-repeat center center;
   background-size: cover;
   z-index: 0;
-  transform: skewY(-11deg) !important; /* 優先度を上げる */
+  transform: skewY(-11deg) !important;
   transform-origin: top left;
   filter: saturate(190%);
   animation: slideDownBg 1.5s ease forwards; /* アニメーション追加 */
 }
 @keyframes slideDownBg {
   from {
-    transform: translateY(100%); /* 開始位置：下部（画面外） */
-    opacity: 0; /* 透明 */
+    transform: translateY(100%);
+    opacity: 0; 
   }
   to {
-    transform: translateY(0); /* 終了位置：中央 */
-    opacity: 1; /* 表示 */
+    transform: translateY(0);
+    opacity: 1;
   }
 }
