@@ -6,6 +6,7 @@ interface loginUser {
 }
 
 interface CardProps {
+    cardImageUrl?: string; // 画像URLを指定するプロパティ
     cardTitle: string; // ボタン名を指定するプロパティ
     lastUpdateDate: string;
     lastUpdateUser: string;
@@ -13,13 +14,17 @@ interface CardProps {
     onClick?: () => void; // クリックハンドラを追加
 }
 
-const Card: React.FC<CardProps> = ({ cardTitle, lastUpdateDate, lastUpdateUser, loginUserNames, onClick }) => {
+//const defaultImageUrl = "https://via.placeholder.com/300x200.png?text=Default+Image";
+const defaultImageUrl = "./nami.jpg"; // デフォルトの画像URLを指定
+const Card: React.FC<CardProps> = ({ cardImageUrl, cardTitle, lastUpdateDate, lastUpdateUser, loginUserNames, onClick }) => {
+    // 画像URLが指定されていない場合はデフォルトの画像URLを使用
+    const imageUrl = cardImageUrl || defaultImageUrl;
     return (
         <button
             onClick={onClick}
             className="card-small rounded overflow-hidden shadow-ml transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl cursor-pointer bg-white w-full text-left"
         >
-            <img className="card-image w-full h-48 object-cover" src="./nami.jpg" alt="hoge" />
+            <img className="card-image w-full h-48 object-cover" src={imageUrl} alt="hoge" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{cardTitle}</div>
                 <p className="text-gray-700 text-base">
