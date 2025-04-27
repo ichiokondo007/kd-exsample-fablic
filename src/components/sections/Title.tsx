@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TitleContext } from "../../app/Layout";
+import { TitleContext } from "../../contexts/TitleContext";
 import { getBreadcrumbByTitlename, TitleObject } from "../../lib/commonType";
 
 const Title: React.FC = () => {

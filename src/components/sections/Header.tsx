@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { TitleContext } from "../../app/Layout";
+import { TitleContext } from "../../contexts/TitleContext";
 import "../../styles.css";
 import Dropdown from "../ui/Dropdown";
 import { InitialAvatar } from "../ui/avater";

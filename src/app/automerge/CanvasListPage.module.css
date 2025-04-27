@@ -1,13 +1,49 @@
 .container {
-  padding-top: 20px;
+  padding: 20px 20px; /* 上下20px、左右16pxの余白を設定 */
   display: flex;
-  gap: 5px;
+  flex-direction: column; /* コンテンツを縦方向に並べる */
+  gap: 20px; /* コンテンツ間の間隔 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newCanvasContainer {
+  display: flex;
+  justify-content: flex-start; /* 左寄せ */
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
   max-width: 72rem;
-  margin: 0 auto;
+  margin: 0 auto; /* 中央揃え */
   gap: 1.25rem;
+  justify-content: center; /* カードを中央に配置 */
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animatedCard {
+  opacity: 0;
+  animation: slideUp 0.9s ease forwards;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px; /* モバイル表示時は左右の余白を小さく調整 */
+  }
 }

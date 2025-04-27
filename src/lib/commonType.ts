@@ -9,18 +9,20 @@ export const TOP: string = "TOP";
 export const CanvasList: string = "CanvasList";
 export const InputFormTest: string = "InputFormTest";
 export const OTHERS: string = "OTHERS";
-export type MenuKey = typeof TOP | typeof CanvasList | typeof InputFormTest | typeof OTHERS;
+export const Canvas: string = "Canvas";
+export type MenuKey = typeof TOP | typeof CanvasList | typeof InputFormTest | typeof OTHERS | typeof Canvas;
 
 export const TOPPATH: string = "/top";
 export const CanvasListPath: string = "/canvaslistpage";
 export const InputFormTestPath: string = "/canvasapppage";
 export const OTHERSPath: string = "/others";
+export const CanvasPath: string = "/canvas";
 export type Menupath = typeof TOPPATH | typeof CanvasListPath | typeof InputFormTestPath | typeof OTHERSPath;
 
 export interface TitleObject {
     titlename: MenuKey;
     path: Menupath;
-    iconUrl: String;
+    iconUrl: string;
 }
 
 export const titles: { key: MenuKey, titleObject: TitleObject }[] = [
@@ -58,6 +60,14 @@ export const titles: { key: MenuKey, titleObject: TitleObject }[] = [
             iconUrl: ""
         }
     },
+    {
+        key: Canvas,
+        titleObject: {
+            titlename: Canvas,
+            path: CanvasPath,
+            iconUrl: ""
+        }
+    },
 ];
 
 export function getTitleObjectByKey(key: MenuKey): TitleObject | undefined {
@@ -69,7 +79,8 @@ export const breadcrumb: { titlename: MenuKey, titlnames: string[] }[] = [
     { titlename: TOP, titlnames: [TOP] },
     { titlename: CanvasList, titlnames: [TOP, CanvasList] },
     { titlename: InputFormTest, titlnames: [TOP, InputFormTest] },
-    { titlename: OTHERS, titlnames: [TOP, OTHERS] }
+    { titlename: OTHERS, titlnames: [TOP, OTHERS] },
+    { titlename: Canvas, titlnames: [TOP, CanvasList,Canvas] },
 ]
 
 export function getBreadcrumbByTitlename(titlename: MenuKey): TitleObject[] | undefined {
@@ -86,5 +97,3 @@ export function getBreadcrumbByTitlename(titlename: MenuKey): TitleObject[] | un
         iconUrl: ""
     }]
 }
-
-

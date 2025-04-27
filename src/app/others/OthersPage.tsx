@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TitleContext } from "../../app/Layout";
+import { TitleContext } from "../../contexts/TitleContext";
 import { OTHERS } from "../../lib/commonType";
 
 const Others: React.FC = () => {

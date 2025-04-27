@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "../kdlab"
+			"path": "../kd-exsample-mongodb"
 		}
 	],
 	"settings": {

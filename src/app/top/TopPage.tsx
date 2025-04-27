@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TitleContext } from "../../app/Layout";
+import { TitleContext } from "../../contexts/TitleContext";
 import { TOP } from "../../lib/commonType";
 import Card from "../../components/ui/Card";
 
@@ -16,6 +16,7 @@ const TopPage: React.FC = () => {
       <div className="flex flex-wrap max-w-6xl mx-auto gap-5">
 
         <Card
+          cardImageUrl=""
           cardTitle="Canvas 1"
           lastUpdateUser="ichio"
           lastUpdateDate="2021-09-01"
@@ -42,7 +43,6 @@ const TopPage: React.FC = () => {
         />
 
       </div>
-      
     </div>
   )
 };

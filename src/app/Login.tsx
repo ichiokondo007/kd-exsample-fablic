@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext} from "react";
 import { useNavigate } from "react-router-dom";
-import { TitleContext } from "./Layout";
+import { TitleContext } from "../contexts/TitleContext";
 import { TOP,TOPPATH,loginsessionName,LoginInfo } from "../lib/commonType";
 
 const Login: React.FC = () => {
